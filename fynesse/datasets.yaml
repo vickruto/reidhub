@@ -1,0 +1,43 @@
+---
+gzgc:
+    url:
+        - https://storage.googleapis.com/public-datasets-lila/wild-me/gzgc.coco.tar.gz  ## GCP LINK
+    species:
+        - zebra
+        - giraffe
+    citations:
+        -
+        -
+
+hyena_id_2022:
+    url:
+        - https://storage.googleapis.com/public-datasets-lila/wild-me/hyena.coco.tar.gz ## GCP LINK
+    species:
+        - hyena
+    citations:
+        -
+        -
+
+leopard_id_2022:
+    url: https://storage.googleapis.com/public-datasets-lila/wild-me/leopard.coco.tar.gz ## GCP LINK
+    species:
+        - leopard
+    citations:
+        -
+        -
+
+beluga_id_2022:
+    url: https://storage.googleapis.com/public-datasets-lila/wild-me/beluga.coco.tar.gz ## GCP LINK
+    species:
+        - beluga whale
+    citations:
+        -
+        -
+
+nyala_data:
+    url: https://github.com/tvanzyl/wildlife_reidentification/tree/main/Nyala_Data_Zero ## Github
+    species:
+        - nyala
+    citations:
+        -
+        -
