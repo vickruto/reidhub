@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "fynesse"
-version = "0.1.0"
-description = "Template files for performing fynesse pipeline data analysis with python."
-authors = ["Firstname Lastname <emal@domain.here>"]
-maintainers = ["Firstname Lastname <emal@domain.here>"]
+name = "reidhub"
+version = "0.0.1"
+description = "Centralized hub for animal reidentification dataset workflows."
+authors = ["Victor Ruto <vikrootoe@gmail.com>"]
+maintainers = ["Victor Ruto <vikrootoe@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 keywords = ["data-science", "analysis", "framework", "access", "assess", "address"]
@@ -29,7 +29,6 @@ include = ["fynesse/defaults.yml"]
 python = "^3.9"
 pandas = "^2.0.0"
 numpy = "^1.24.0"
-jupyter = "^1.0.0"
 matplotlib = "^3.7.0"
 PyYAML = "^6.0.0"
 
@@ -45,10 +44,10 @@ types-pyyaml = "^6.0.12.20250822"
 bokeh = "^3.0.0"
 
 [tool.poetry.urls]
-Homepage = "https://github.com/lawrennd/fynesse_template"
-Repository = "https://github.com/lawrennd/fynesse_template"
-Documentation = "https://github.com/lawrennd/fynesse_template#readme"
-Issues = "https://github.com/lawrennd/fynesse_template/issues"
+Homepage = "https://github.com/vickruto/reidhub"
+Repository = "https://github.com/vickruto/reidhub"
+Documentation = "https://github.com/vickruto/reidhub#readme"
+Issues = "https://github.com/vickruto/reidhub/issues"
 
 [tool.pytest.ini_options]
 testpaths = ["fynesse/tests"]
