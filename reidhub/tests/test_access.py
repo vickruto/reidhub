@@ -8,7 +8,7 @@ This module tests data access functionality including:
 """
 
 import pytest
-from fynesse import access
+from reidhub.access import access
 
 
 class TestAccessModule:

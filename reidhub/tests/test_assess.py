@@ -10,7 +10,7 @@ This module tests data assessment functionality including:
 """
 
 import pytest
-from fynesse import assess
+from reidhub.assess import assess
 
 
 class TestAssessModule:

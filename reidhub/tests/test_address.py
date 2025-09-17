@@ -9,7 +9,7 @@ This module tests question addressing functionality including:
 """
 
 import pytest
-from fynesse import address
+from reidhub.address import address
 
 
 class TestAddressModule:
