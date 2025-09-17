@@ -36,10 +36,10 @@ jobs:
       run: poetry install --with dev
     
     - name: Check code formatting with black
-      run: poetry run black --check fynesse/
+      run: poetry run black --check reidhub/
     
     - name: Lint with flake8
-      run: poetry run flake8 fynesse/
+      run: poetry run flake8 reidhub/
     
     - name: Type check with mypy
-      run: poetry run mypy fynesse/ --ignore-missing-imports
+      run: poetry run mypy reidhub/ --ignore-missing-imports
