@@ -22,8 +22,8 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-packages = [{include = "fynesse"}]
-include = ["fynesse/defaults.yml"]
+packages = [{include = "reidhub"}]
+include = ["reidhub/defaults.yml"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -50,7 +50,7 @@ Documentation = "https://github.com/vickruto/reidhub#readme"
 Issues = "https://github.com/vickruto/reidhub/issues"
 
 [tool.pytest.ini_options]
-testpaths = ["fynesse/tests"]
+testpaths = ["reidhub/tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
@@ -59,7 +59,7 @@ addopts = [
     "--tb=short",
     "--strict-markers",
     "--disable-warnings",
-    "--cov=fynesse",
+    "--cov=reidhub",
     "--cov-report=term-missing",
     "--cov-report=html:htmlcov",
 ]
@@ -70,7 +70,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["fynesse"]
+source = ["reidhub"]
 omit = [
     "*/tests/*",
     "*/test_*",
