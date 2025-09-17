@@ -1,4 +1,4 @@
-# ReIDHub
+# ReIDHub 🐾  
 
 *A central hub for open-source animal re-identification datasets, built on the Access–Assess–Address framework.*  
 
@@ -79,7 +79,7 @@ Each dataset will include:
 
 ## 🚀 Roadmap  
 
-- [*] Implement dataset registry (Access)  
+- [ ] Implement dataset registry (Access)  
 - [ ] Add FiftyOne dataset conversion/export  
 - [ ] Add profiling and baseline benchmarks (Assess)  
 - [ ] Enable cached embeddings/predictions for reuse (Address)  
@@ -119,7 +119,7 @@ Applying the data to the actual question or problem. This may involve building p
 ### Prerequisites
 - Python 3.9 or higher
 - Poetry (install via `curl -sSL https://install.python-poetry.org | python3 -`)
-- make  
+- make  - an option to make common development commands easier.
 If you are working in a UNIX based system (Linux or Mac) then you already have `make` installed. If you are working on Windows, you might have to install it. 
 
 ### Clone this repository
@@ -207,13 +207,13 @@ poetry install --with dev
 poetry run pytest
 
 # Format code
-poetry run black fynesse/
+poetry run black reidhub/
 
 # Type checking
-poetry run mypy fynesse/
+poetry run mypy reidhub/
 
 # Linting
-poetry run flake8 fynesse/
+poetry run flake8 reidhub/
 ```
 </details>
 
