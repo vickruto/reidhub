@@ -1,46 +1,135 @@
----
+####################################################################################
+### DATASETS 
+### This file contains information and metadata for each dataset
+####################################################################################
+
 gzgc:
-  url:
-    - https://storage.googleapis.com/public-datasets-lila/wild-me/gzgc.coco.tar.gz  # GCP LINK
-  species:
-    - zebra
-    - giraffe
-  citations:
-    -
-    -
+    url: 
+        - https://storage.googleapis.com/public-datasets-lila/wild-me/gzgc.coco.tar.gz ## GCP LINK
+    size: 10240
+    images: 4948
+    species: 
+        - zebra
+        - giraffe
+    citations: 
+        - |
+          @inproceedings{parham2017animal,
+            title={Animal population censusing at scale with citizen science and photographic identification},
+            author={Parham, Jason and Crall, Jonathan and Stewart, Charles and Berger-Wolf, Tanya and Rubenstein, Daniel I},
+            booktitle={AAAI spring symposium-technical report},
+            year={2017}
+          }
+        - 
+    readiness_level:
+    licence: |
+        Community Data License Agreement (permissive variant).
+        url: https://cdla.dev/permissive-1-0/
+    central_location: 
+        latitude: -1.366047
+        longitude: 36.850967
 
 hyena_id_2022:
-  url:
-    - https://storage.googleapis.com/public-datasets-lila/wild-me/hyena.coco.tar.gz  # GCP LINK
-  species:
-    - hyena
-  citations:
-    -
-    -
+    url: 
+        - https://storage.googleapis.com/public-datasets-lila/wild-me/hyena.coco.tar.gz ## GCP LINK
+    size: 3072
+    images:
+    species: 
+        - hyena
+    citations: 
+        - |
+          Botswana Predator Conservation Trust (2022). Panthera pardus CSV custom export. Retrieved from African Carnivore Wildbook 2022-04-28.
+        - 
+    readiness_level:
+    licence: |
+        Community Data License Agreement (permissive variant).
+        url: https://cdla.dev/permissive-1-0/
+    central_location: 
+        latitude:
+        longitude:
 
 leopard_id_2022:
-  url:
-    - https://storage.googleapis.com/public-datasets-lila/wild-me/leopard.coco.tar.gz  # GCP LINK
-  species:
-    - leopard
-  citations:
-    -
-    -
+    url: 
+        - https://storage.googleapis.com/public-datasets-lila/wild-me/leopard.coco.tar.gz ## GCP LINK
+    size: 8192
+    images:
+    species: 
+        - leopard
+    citations: 
+        - |
+          Botswana Predator Conservation Trust (2022). Panthera pardus CSV custom export. Retrieved from African Carnivore Wildbook 2022-04-28.
+        - 
+    readiness_level:
+    licence: |
+        Community Data License Agreement (permissive variant).
+        url: https://cdla.dev/permissive-1-0/
+    central_location: 
+        latitude:
+        longitude:
+
 
 beluga_id_2022:
-  url:
-    - https://storage.googleapis.com/public-datasets-lila/wild-me/beluga.coco.tar.gz  # GCP LINK
-  species:
-    - beluga whale
-  citations:
-    -
-    -
+    url: 
+        - https://storage.googleapis.com/public-datasets-lila/wild-me/beluga.coco.tar.gz ## train split
+        - https://storage.googleapis.com/public-datasets-lila/wild-me/beluga-id-test.zip ## test split
+    size: 680
+    images:
+    species: 
+        - beluga whale
+    citations: 
+        - 
+        - 
+    readiness_level:
+    licence: |
+        Community Data License Agreement (permissive variant).
+        url: https://cdla.dev/permissive-1-0/
+    central_location: 
+        latitude:
+        longitude:
 
 nyala_data:
-  url:
-    - https://github.com/tvanzyl/wildlife_reidentification/tree/main/Nyala_Data_Zero  # Github
-  species:
-    - nyala
-  citations:
-    -
-    -
+    url: 
+        - https://github.com/tvanzyl/wildlife_reidentification/tree/main/Nyala_Data_Zero ## Github
+    size:
+    images:
+    species: 
+        - nyala
+    citations: 
+        - 
+        - 
+    readiness_level:
+    licence: |
+        Community Data License Agreement (permissive variant).
+        url: https://cdla.dev/permissive-1-0/
+    central_location: 
+        latitude:
+        longitude:
+
+sea_star_reid:
+    url: 
+        - https://storage.googleapis.com/public-datasets-lila/sea-star-re-id/sea-star-re-id.zip ## Github
+    size:
+    images:
+    species: 
+        - sea star
+    citations: 
+        - |
+          @article{wahltinez2024open,
+            title={An open-source general purpose machine learning framework for individual animal re-identification using few-shot learning},
+            author={Wahltinez, Oscar and Wahltinez, Sarah J},
+            journal={Methods in Ecology and Evolution},
+            volume={15},
+            number={2},
+            pages={373--387},
+            year={2024},
+            publisher={Wiley Online Library}
+            }
+        - 
+    readiness_level:
+    licence: |
+        Community Data License Agreement (permissive variant).
+        url: https://cdla.dev/permissive-1-0/
+    central_location: 
+        latitude:
+        longitude:
+
+
