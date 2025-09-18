@@ -15,7 +15,7 @@ import requests
 import tarfile
 
 from .dataset_parser import get_dataset_config
-from ...config import cache_root
+from ...config import config as defaults
 
 # Dataset Identifier
 DATASET_ID = "gzgc"
@@ -37,10 +37,10 @@ def download_and_extract() -> str:
     filename = url.split("/")[-1]
 
     # Create dataset-specific cache directory
-    dataset_dir = Path(cache_root) / DATASET_ID
-    dataset_dir.mkdir(parents=True, exist_ok=True)
-
+    dataset_dir = Path(defaults['cache_root']) / DATASET_ID
+    dataset_dir = dataset_dir.expanduser().resolve()
     tar_path = dataset_dir / filename
+    dataset_dir.mkdir(parents=True, exist_ok=True)
 
     # Download the file if not already present
     if not tar_path.exists():
