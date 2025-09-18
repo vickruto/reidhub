@@ -1,10 +1,18 @@
-####################################################################################
-### DATASETS
+############################################################################################################
+###               DATASETS
 ### This file contains information and metadata for each dataset
-####################################################################################
+### Some of the values in this config file are automatically updated after initially accessing the dataset
+###    eg : Number of images, dataset size
+############################################################################################################
 
 ---
 gzgc:
+  name: Great Zebra and Giraffe Count and ID
+  source:
+    place: Nairobi National Park
+    coordinates:
+      latitude: -1.366047
+      longitude: 36.850967
   url:
     - https://storage.googleapis.com/public-datasets-lila/wild-me/gzgc.coco.tar.gz  # GCP LINK
   size: 10240
@@ -24,12 +32,15 @@ gzgc:
   licence: |
     Community Data License Agreement (permissive variant).
     url: https://cdla.dev/permissive-1-0/
-  central_location:
-    latitude: -1.366047
-    longitude: 36.850967
 
 
 hyena_id_2022:
+  name: Hyena ID 2022
+  source:
+    place:
+    coordinates:
+      latitude:
+      longitude:
   url:
     - https://storage.googleapis.com/public-datasets-lila/wild-me/hyena.coco.tar.gz  # GCP LINK
   size: 3072
@@ -43,12 +54,15 @@ hyena_id_2022:
   licence: |
     Community Data License Agreement (permissive variant).
     url: https://cdla.dev/permissive-1-0/
-  central_location:
-    latitude:
-    longitude:
-
+ 
 
 leopard_id_2022:
+  name: Leopard ID 2022
+  source:
+    place:
+    coordinates:
+      latitude:
+      longitude:
   url:
     - https://storage.googleapis.com/public-datasets-lila/wild-me/leopard.coco.tar.gz  # GCP LINK
   size: 8192
@@ -62,12 +76,15 @@ leopard_id_2022:
   licence: |
     Community Data License Agreement (permissive variant).
     url: https://cdla.dev/permissive-1-0/
-  central_location:
-    latitude:
-    longitude:
 
 
 beluga_id_2022:
+  name: Beluga ID 2022
+  source:
+    place:
+    coordinates:
+      latitude:
+      longitude:
   url:
     - https://storage.googleapis.com/public-datasets-lila/wild-me/beluga.coco.tar.gz  # train split
     - https://storage.googleapis.com/public-datasets-lila/wild-me/beluga-id-test.zip  # test split
@@ -82,12 +99,16 @@ beluga_id_2022:
   licence: |
     Community Data License Agreement (permissive variant).
     url: https://cdla.dev/permissive-1-0/
-  central_location:
-    latitude:
-    longitude:
+
 
 
 nyala_data:
+  name: 
+  source:
+    place:
+    coordinates:
+      latitude:
+      longitude:
   url:
     - https://github.com/tvanzyl/wildlife_reidentification/tree/main/Nyala_Data_Zero  # Github
   size:
@@ -101,12 +122,15 @@ nyala_data:
   licence: |
     Community Data License Agreement (permissive variant).
     url: https://cdla.dev/permissive-1-0/
-  central_location:
-    latitude:
-    longitude:
 
 
 sea_star_reid:
+  name: Sea Star Re-ID 2023
+  source:
+    place:
+    coordinates:
+      latitude:
+      longitude:
   url:
     - https://storage.googleapis.com/public-datasets-lila/sea-star-re-id/sea-star-re-id.zip  # Github
   size:
@@ -129,6 +153,3 @@ sea_star_reid:
   licence: |
     Community Data License Agreement (permissive variant).
     url: https://cdla.dev/permissive-1-0/
-  central_location:
-    latitude:
-    longitude:
