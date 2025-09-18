@@ -17,8 +17,9 @@ import tarfile
 from .dataset_parser import get_dataset_config
 from ...config import cache_root
 
+
 ## Dataset Identifier
-DATASET_ID = 'gzgc'
+DATASET_ID = 'sea_star_reid'
 
 
 def download_and_extract() -> str:
