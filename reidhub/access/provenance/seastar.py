@@ -1,13 +1,13 @@
-'''
+"""
 This module downloads the Great Zebra and Giraffe Count (GZGC) Dataset \
     from a GCP Bucket provided by Lila Datasets
 
-'''
+"""
 
-## todos:
-## Refactor this function later to do the following:
-## 1) use a reidhub cache folder
-## 2) remove the zip/tar file after downloading and unzipping successfully
+# todos:
+# Refactor this function later to do the following:
+# 1) use a reidhub cache folder
+# 2) remove the zip/tar file after downloading and unzipping successfully
 
 from pathlib import Path
 import logging
@@ -18,24 +18,24 @@ from .dataset_parser import get_dataset_config
 from ...config import cache_root
 
 
-## Dataset Identifier
-DATASET_ID = 'sea_star_reid'
+# Dataset Identifier
+DATASET_ID = "sea_star_reid"
 
 
 def download_and_extract() -> str:
-    '''
-    downloads the gzgc from the gcp bucket url provided by lila datasets. 
+    """
+    downloads the gzgc from the gcp bucket url provided by lila datasets.
     Accessible here: https://lila.science/datasets/great-zebra-giraffe-id
 
     Args:
         DATASET_ID: str :- the identifier for the dataset.
-    
-    returns: 
+
+    returns:
         a path to the extracted and formatted `reidhub` dataset
-    '''
+    """
     config = get_dataset_config(DATASET_ID)
-    url = config['url'][0]
-    filename = url.split('/')[-1]
+    url = config.url[0]
+    filename = url.split("/")[-1]
 
     # Create dataset-specific cache directory
     dataset_dir = Path(cache_root) / DATASET_ID
@@ -58,7 +58,7 @@ def download_and_extract() -> str:
             return str(dataset_dir)
     else:
         logging.info(f"{tar_path} already exists. Skipping download.")
- 
+
     # Extract the file into the dataset directory
     extracted_flag = dataset_dir / ".extracted"
     if not extracted_flag.exists():

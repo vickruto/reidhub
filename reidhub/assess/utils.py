@@ -1,19 +1,17 @@
-'''
+"""
 This module contains some helper functions for common operations in the assess stage
 
-'''
+"""
 
-## count the number of images
-
-
-## get the size of the dataset
+# count the number of images
 
 
-## check for duplicates
+# get the size of the dataset
 
 
+# check for duplicates
 
-############################## ADVANCED ##########################################
 
-## check for near duplicates
+# ############################# ADVANCED ##########################################
 
+# check for near duplicates

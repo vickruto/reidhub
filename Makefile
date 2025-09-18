@@ -25,7 +25,7 @@ lint: ## 🔍 Run flake8 linting
 type-check: ## 🔎 Run mypy type checking
 	poetry run mypy reidhub/
 
-yamllint: ## 🔎 Lint YAML files using yamllint
+yamllint: ## 🧑‍💻 Lint YAML files using yamllint
 	poetry run yamllint . --config-file .yamllint
 
 quality: format lint type-check ## ✅ Run code quality checks (format + lint + type-check)

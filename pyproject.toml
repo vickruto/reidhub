@@ -42,6 +42,7 @@ flake8 = "^6.0.0"
 mypy = "^1.0.0"
 types-pyyaml = "^6.0.12.20250822"
 yamllint = "^1.37.1"
+types-requests = "^2.32.4.20250913"
 
 [tool.poetry.group.interactive.dependencies]
 bokeh = "^3.0.0"
