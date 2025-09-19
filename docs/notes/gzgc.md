@@ -1,0 +1,3 @@
+- Highly **imbalanced**: many individuals seen only once.  
+- Metadata includes viewpoint; useful for studying orientation effects in ReID.  
+- All images are in the `train` split; custom validation/test splits needed.  

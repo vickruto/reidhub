@@ -1,0 +1,19 @@
+num_images: 4948
+num_ids: 2056
+species:
+  - name: Plains Zebra
+    status: Least Concern
+    color: green
+    url: https://www.iucnredlist.org/species/41013/45172424
+    num_images:
+    num_ids:
+  - name: Masai Giraffe
+    status: Endangered
+    color: red
+    url: https://www.iucnredlist.org/species/88421036/88421121
+    num_images:
+    num_ids:
+license:
+  name: CDLA-Permissive
+  url: ../licenses/cdla-permissive.md
+download_size: 10GB

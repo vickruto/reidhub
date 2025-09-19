@@ -1,0 +1,57 @@
+site_name: ReIDHub
+repo_url: https://github.com/vickruto/reidhub
+repo_name: reidhub
+
+theme:
+  name: material
+  palette:
+    scheme: default  # Auto light/dark mode
+  features:
+    - content.code.copy  # Copy button for code blocks
+    - content.tabs       # Support for tabs
+    - navigation.top     # Top navigation bar
+    - navigation.tracking # Updates URL on scroll
+  logo: assets/images/logo.png  # Optional logo
+  favicon: assets/images/favicon.ico
+
+docs_dir: docs
+markdown_extensions:
+  - attr_list          # For image attributes (#only-light, #only-dark)
+  - pymdownx.emoji     # Emoji support
+  - pymdownx.highlight  # Code highlighting
+  - pymdownx.superfences
+  - admonition
+
+plugins:
+  - mkdocstrings:  # Enable MkDocstrings
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            merge_init_into_class: true
+
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quick-start.md
+      - FAQ: getting-started/faq.md
+  - Features:
+      - Feature 1: features/feature1.md
+      - Feature 2: features/feature2.md
+  - Datasets: 
+      - Great Zebra and Giraffe Count : output-dataset-readmes/gzgc.md
+      - Nyala Data : output-dataset-readmes/nyala.md
+      - Amur Tigers Reidentification : output-dataset-readmes/gzgc.md
+
+  - Tutorials: tutorials/index.md
+  - API Reference: api/index.md
+  - Contributing: contributing.md
+  - Changelog: changelog.md
+
+extra:
+  announcement: |
+    <img src="assets/images/banner.png" alt="Announcement Banner" style="height: 40px; width: 100%; object-fit: cover;">
+    <strong>New Release!</strong> Check out v2.0 in the <a href="changelog.md">Changelog</a>.
