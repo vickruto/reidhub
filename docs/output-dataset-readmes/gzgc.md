@@ -15,15 +15,7 @@
 
 
 <p align="center">
-  <img src="http://localhost:8000/assets/grids/grid-gzgc.png" alt="sample_ image grid"/>
-</p>
-
-<p align="center">
-  <img src="assets/grids/grid-gzgc.png" alt="sample_ image grid"/>
-</p>
-
-<p align="center">
-  <img src="http://lila.science/wp-content/uploads/2020/08/zebra_w_logo_650.png" alt="sample online image"/>
+  <img src="/assets/grids/grid-gzgc.png" alt="sample_ image grid"/>
 </p>
 
 ---
@@ -40,7 +32,7 @@ The IDs were assigned using the HotSpotter algorithm [(Crall et al. 2013)] by vi
 ## ⚠️ Notes
 
 <p align="center">
-  <img src="../assets/content_Under-Construction-Free-Download-PNG.png" alt="In development" width="120"/>
+  <img src="/assets/content_Under-Construction-Free-Download-PNG.png" alt="In development" width="120"/>
 </p>
 
 
