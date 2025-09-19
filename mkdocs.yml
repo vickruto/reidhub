@@ -5,13 +5,23 @@ repo_name: reidhub
 theme:
   name: material
   palette:
-    scheme: default  # Auto light/dark mode
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7  # Sun icon for light mode
+        name: Switch to dark mode    # Tooltip text
+    # Palette toggle for dark mode
+    - scheme: slate  # Or 'default' for a lighter dark variant
+      toggle:
+        icon: material/brightness-4  # Moon icon for dark mode
+        name: Switch to light mode   # Tooltip text
   features:
     - content.code.copy  # Copy button for code blocks
     - content.tabs       # Support for tabs
     - navigation.top     # Top navigation bar
     - navigation.tracking # Updates URL on scroll
-  logo: assets/images/logo.png  # Optional logo
+    - announcement
+  # logo: assets/images/logo.jpg  # Optional logo
   favicon: assets/images/favicon.ico
 
 docs_dir: docs
@@ -30,7 +40,6 @@ plugins:
             docstring_style: google
             show_source: true
             merge_init_into_class: true
-
 
 nav:
   - Home: index.md
@@ -51,7 +60,10 @@ nav:
   - Contributing: contributing.md
   - Changelog: changelog.md
 
+
 extra:
-  announcement: |
-    <img src="assets/images/banner.png" alt="Announcement Banner" style="height: 40px; width: 100%; object-fit: cover;">
-    <strong>New Release!</strong> Check out v2.0 in the <a href="changelog.md">Changelog</a>.
+  announce:
+    dismissible: true
+    content: >
+      ⚠️ This documentation is still under construction.  
+      Please check back later!
