@@ -4,6 +4,7 @@ repo_name: reidhub
 
 theme:
   name: material
+  custom_dir: docs/overrides
   palette:
     # Palette toggle for light mode
     - scheme: default
@@ -20,7 +21,7 @@ theme:
     - content.tabs       # Support for tabs
     - navigation.top     # Top navigation bar
     - navigation.tracking # Updates URL on scroll
-    - announcement
+    - announce.dismiss
   # logo: assets/images/logo.jpg  # Optional logo
   favicon: assets/images/favicon.ico
 
