@@ -1,5 +1,6 @@
 site_name: ReIDHub
 repo_url: https://github.com/vickruto/reidhub
+site_url: https://vickruto.github.io/reidhub
 repo_name: reidhub
 
 theme:
@@ -68,9 +69,5 @@ nav:
   - Changelog: changelog.md
 
 
-extra:
-  announce:
-    dismissible: true
-    content: >
-      ⚠️ This documentation is still under construction.  
-      Please check back later!
+hooks:
+  - docs/hooks/hooks.py  # resolve relative image tags correctly.
