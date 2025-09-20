@@ -43,6 +43,10 @@ plugins:
             docstring_style: google
             show_source: true
             merge_init_into_class: true
+  - exclude:
+      glob:
+        - overrides/*.html
+        - __pycache__/*
 
 nav:
   - Home: index.md
