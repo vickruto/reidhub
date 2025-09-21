@@ -10,3 +10,33 @@ datasets_mirror : https://huggingface.co/datasets/vickruto/
 thumbnails_sizes: 
   - (-1, 720)   # height=1024, preserves aspect ratio
   - (-1, 360)    # height=360, preserves aspect ratio
+
+
+IMG_FORMATS:  # supported image formats
+  - bmp
+  - dng
+  - jpeg
+  - jpg
+  - mpo
+  - png
+  - tif
+  - tiff
+  - webp
+  - pfm
+  - heic
+
+DATASET_METADATA_FIELDS:
+  - filepath : compulsory, notna  # compulsory and must not be null (ie must be valid path) 
+  - height: compulsory, notna
+  - width: compulsory, notna
+  - identity: compulsory,  # compulsory but could be null (eg: animals with unknown/hidden identities)
+  - viewpoint : optional, 
+  - license: compulsory,
+  - bbox: optional, 
+  - species: optional, 
+  - photographer: optional, 
+  - timestamp: optional, 
+  - latitude: optional, 
+  - longitude: optional, 
+  - secondary_identities: optional, 
+  - image_id : optional, 
