@@ -4,9 +4,7 @@ from typing import Dict
 from .models import DatasetConfig
 
 # Path to the YAML file
-DATASET_YAML_PATH = os.path.join(
-    os.path.dirname(__file__), "../../datasets.yaml"
-)
+DATASET_YAML_PATH = os.path.join(os.path.dirname(__file__), "../../datasets.yaml")
 
 
 def load_datasets(file_path: str) -> Dict[str, DatasetConfig]:

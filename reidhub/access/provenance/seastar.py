@@ -22,6 +22,7 @@ from ...config import config as defaults
 # Dataset Identifier
 DATASET_ID = "sea_star_reid"
 
+
 def download_and_extract() -> str:
     """
     Downloads the dataset zip file from the provided URL and extracts it.
@@ -32,12 +33,12 @@ def download_and_extract() -> str:
     Returns:
         str: The path to the extracted and formatted `reidhub` dataset.
     """
-    config = get_dataset_config(DATASET_ID) 
+    config = get_dataset_config(DATASET_ID)
     url = config.url[0]
     filename = url.split("/")[-1]
 
     # Create dataset-specific cache directory
-    dataset_dir = Path(defaults['cache_root']) / DATASET_ID
+    dataset_dir = Path(defaults["cache_root"]) / DATASET_ID
     dataset_dir = dataset_dir.expanduser().resolve()
     zip_path = dataset_dir / filename
     dataset_dir.mkdir(parents=True, exist_ok=True)
@@ -73,9 +74,3 @@ def download_and_extract() -> str:
         logging.info(f"Extraction already completed for {zip_path}.")
 
     return str(dataset_dir)
-
-
-## TODO: Remove this!
-if __name__=='__main__':
-    print('running as main')
-    download_and_extract()

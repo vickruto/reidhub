@@ -1,10 +1,10 @@
-'''
+"""
 This module contains functions that are useful for generatic static objects for assessing reid datasets
 Examples: Sample images grid
           Identity distributions
           etc
 
-'''
+"""
 
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -19,7 +19,7 @@ def plot_grid(
     ids: List[int],
     grid_shape: Tuple[int, int] = (3, 3),
     img_size: Tuple[int, int] = (224, 224),
-    spacing: float = 0.05
+    spacing: float = 0.05,
 ) -> plt.Figure:
     """
     Plot a grid of images with colored borders per identity.
@@ -77,12 +77,12 @@ def plot_grid(
             linewidth=10,
             edgecolor=id2color[identity],
             facecolor="none",
-            transform=ax.transData
+            transform=ax.transData,
         )
         ax.add_patch(rect)
 
     # Remove extra axes if fewer images are provided
-    for ax in axes.flatten()[len(images):]:
+    for ax in axes.flatten()[len(images) :]:
         ax.axis("off")
 
     # Adjust spacing between subplots
