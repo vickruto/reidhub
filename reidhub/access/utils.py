@@ -1,9 +1,23 @@
+import logging
+import time
 import pandas as pd
 import fiftyone as fo
+import fiftyone.operators as foo
 from typing import List, Optional
 from ..config import config
 
 from pathlib import Path
+
+operations = [
+    'compute_aspect_ratio',
+    'compute_brightness',
+    'compute_contrast',
+    'compute_exposure',
+    'compute_saturation',
+    'compute_vignetting',
+    'compute_blurriness',
+    'compute_entropy',
+]
 
 
 def find_images(root_path):
@@ -27,7 +41,7 @@ def create_fiftyone_dataset(
     root_path: str,
     metadata_df: pd.DataFrame,
     dataset_name: str,
-    fields: Optional[List[str], None],
+    fields: Optional[List[str]]=None,
 ) -> fo.Dataset:
     """
     creates a fiftyone dataset
@@ -57,13 +71,39 @@ def create_fiftyone_dataset(
     # Create samples
     samples = []
     for row in metadata_df.itertuples():
-        sample = fo.Sample(filepath=row.filepath, **row._asdict())
+        sample = fo.Sample( **row._asdict())
         samples.append(sample)
 
-    # Create dataset from samples
+    # Create dataset from samles
     dataset = fo.Dataset(dataset_name, overwrite=True)
     _ = dataset.add_samples(samples)
     dataset.compute_metadata()
     dataset.persistent = True
     dataset.save()
+    return dataset
+
+
+def fiftyone_check_image_quality_issues(
+    dataset:fo.Dataset,
+    operations:List[str],
+) -> fo.Dataset
+    '''
+    compute potential image quality issues such as brightness, contrast, exposure using\
+    the image_quality_issues operator by jacob marks:
+
+    Args:
+        dataset (fo.Dataset): fiftyone dataset to compute image issues for
+        operations (list(str)): list of operations to compute for the dataset
+
+    Returns:
+        (fo.Dataset): fiftyone dataset with image issues computed
+    '''
+    for operation in operations:
+        logging.info(f"Executing {operation} operation")
+        start_time = time.time()
+        operator = foo.get_operator(f"@jacobmarks/image_issues/{operation}")
+        await operator(dataset)
+        end_time = time.time()
+        dataset.save()
+        logging.info(f"Execution time: {end_time - start_time:.2f} seconds ({operation} operation)")
     return dataset
