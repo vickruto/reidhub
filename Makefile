@@ -36,6 +36,18 @@ clean: ## 🧹 Clean cache and build artifacts
 	rm -rf .pytest_cache .mypy_cache .coverage dist build
 	find . -type d -name "__pycache__" -exec rm -rf {} +
 
+render-docs: ## 📝 Render documentation files from templates using render.py
+	cd docs && poetry run python render.py
+
+build-docs: render-docs ## 📝 Build MkDocs documentation after rendering
+	mkdocs build
+
+serve-docs: render-docs ## 🌐 Serve MkDocs documentation locally after rendering
+	mkdocs serve
+
+deploy-docs: render-docs ## 🚀 Deploy MkDocs documentation (force option) after rendering
+	mkdocs gh-deploy --force
+
 help: ## 📖 Show available commands
 	@echo "Available rules:"
 	@grep -E '^[a-zA-Z_-]+:.*?##' $(MAKEFILE_LIST) \
