@@ -1,24 +1,13 @@
 import logging
 import time
 import pandas as pd
+from pathlib import Path
 import fiftyone as fo
 import fiftyone.operators as foo
 import fiftyone.plugins as fop
 from typing import List, Optional, Union
 from ..config import config
 
-from pathlib import Path
-
-IMAGE_ISSUES_OPERATIONS = [
-    "compute_aspect_ratio",
-    "compute_brightness",
-    "compute_contrast",
-    "compute_exposure",
-    "compute_saturation",
-    "compute_vignetting",
-    "compute_blurriness",
-    "compute_entropy",
-]
 
 
 def find_images(root_path:Union[str, Path]) -> List[Path]:
@@ -49,9 +38,9 @@ def create_fiftyone_dataset(
     Args:
         root_path (str) : the root of the dataset containing the images <- also allow pathlib Paths
         metadata_df (pd.DataFrame) : the metadata for the dataset. Should have the columns (identity, image_path, image_type,)
+        dataset_name (str) : The name of the fiftyone dataset created
         fields (list of str) : list of fields required in the fiftyone dataset created. should be existing columns in the metadata_df. \
                 Default : None : Use all the columns in the metadata_df
-        dataset_name (str) : The name of the fiftyone dataset created
     Returns:
         fo.Dataset: Fiftyone dataset
     """
@@ -81,36 +70,4 @@ def create_fiftyone_dataset(
     dataset.compute_metadata()
     dataset.persistent = True
     dataset.save()
-    return dataset
-
-
-async def fiftyone_check_image_quality_issues(
-    dataset: fo.Dataset,
-    operations: List[str] = IMAGE_ISSUES_OPERATIONS,
-) -> fo.Dataset:
-    """
-    compute potential image quality issues such as brightness, contrast, exposure using\
-    the image_quality_issues operator by jacob marks:
-
-    Args:
-        dataset (fo.Dataset): fiftyone dataset to compute image issues for
-        operations (list(str)): list of operations to compute for the dataset
-
-    Returns:
-        (fo.Dataset): fiftyone dataset with image issues computed
-    """
-
-    # Download image issues plugin from github repository
-    fop.download_plugin("https://github.com/jacobmarks/image-quality-issues/")
-
-    for operation in operations:
-        logging.info(f"Executing {operation} operation")
-        start_time = time.time()
-        operator = foo.get_operator(f"@jacobmarks/image_issues/{operation}")
-        await operator(dataset)
-        end_time = time.time()
-        dataset.save()
-        logging.info(
-            f"Execution time: {end_time - start_time:.2f} seconds ({operation} operation)"
-        )
     return dataset
