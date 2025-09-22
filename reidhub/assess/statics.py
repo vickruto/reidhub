@@ -6,6 +6,7 @@ Examples: Sample images grid
 
 """
 
+from collections import Counter
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
@@ -88,4 +89,39 @@ def plot_grid(
     # Adjust spacing between subplots
     plt.subplots_adjust(wspace=spacing, hspace=spacing)
 
+    return fig
+
+
+def plot_identity_histogram(ids, bins=50, log_scale=False, alpha=0.6, figsize=(8, 5)):
+    """
+    Plot a transparent histogram of identity frequencies 
+    (how many images per identity).
+
+    Args:
+        ids (list): List of identity labels.
+        bins (int or list): Number of bins or explicit bin edges.
+        log_scale (bool): Whether to use log scale for y-axis.
+        alpha (float): Transparency of histogram bars (0=fully transparent, 1=opaque).
+        figsize (tuple): Figure size.
+    """
+    # Count how many images per identity
+    counts = Counter(ids).values()
+
+    # Plot histogram
+    fig, ax = plt.subplots(figsize=figsize)
+    ax.hist(counts, bins=bins, color="steelblue", edgecolor="black", alpha=alpha)
+
+    # Transparent backgrounds
+    fig.patch.set_alpha(0)   # Figure background
+    ax.patch.set_alpha(0)    # Axes background
+
+    ax.set_xlabel("Number of images per identity")
+    ax.set_ylabel("Number of identities")
+    ax.set_title("Identity Frequency Distribution")
+
+    if log_scale:
+        ax.set_yscale("log")
+        ax.set_ylabel("Number of identities (log scale)")
+
+    plt.tight_layout()
     return fig
