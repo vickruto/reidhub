@@ -7,6 +7,7 @@ from typing import List
 import fiftyone as fo
 import fiftyone.operators as foo
 import fiftyone.plugins as fop
+import fiftyone.brain as fob
 
 from ..access.utils import find_images
 
@@ -87,10 +88,26 @@ def format_size(size_in_bytes):
 
 
 # check for duplicates
+def check_for_duplicates(dataset: fo.Dataset) -> fo.Dataset:
+    """
+    Compute uniqueness of dataset samples and check for duplicates
+    
+    Args:
+        dataset (fo.Dataset): the dataset to check for duplicates.
 
+    Returns:
+        fo.Dataset: the dataset with the `uniqueness` and `duplicates` fields added
+        
+    """
+    fob.compute_uniqueness(dataset)
 
+    # check for near duplicates
+    index = fob.compute_near_duplicates(dataset)
+    dups_view = index.duplicates_view()
+    dups_view.tag_samples('duplicate')
 
-# check for near duplicates
+    return dataset
+
 
 # Check for image quality issues
 async def fiftyone_check_image_quality_issues(
