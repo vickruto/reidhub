@@ -2,10 +2,14 @@
 This module contains some helper functions for common operations in the assess stage
 
 """
+import os
 from typing import List
 import fiftyone as fo
 import fiftyone.operators as foo
 import fiftyone.plugins as fop
+
+from ..access.utils import find_images
+
 
 IMAGE_ISSUES_OPERATIONS = [
     "compute_aspect_ratio",
@@ -19,15 +23,72 @@ IMAGE_ISSUES_OPERATIONS = [
 ]
 
 # count the number of images
+def get_number_of_images(dataset_root):
+    """
+    Get the number of images in a dataset from its root path
+
+    Args: 
+        dataset_root (str): The root path of the dataset
+
+    Returns: 
+        int: Number of images in the directory
+    """
+    image_paths = find_images(dataset_root)
+    return len(image_paths)
 
 
 # get the size of the dataset
+def get_directory_size(dataset_root):
+    """
+    Calculate the total size of a directory and its subdirectories in bytes.
+    
+    Args:
+        dataset_root (str): The root path of the dataset
+        
+    Returns:
+        int: Total size in bytes, or 0 if directory doesn't exist
+    """
+    total_size = 0
+    
+    try:
+        # Walk through directory and subdirectories
+        for dirpath, dirnames, filenames in os.walk(dataset_root):
+            # Add size of each file
+            for filename in filenames:
+                file_path = os.path.join(dirpath, filename)
+                try:
+                    total_size += os.path.getsize(file_path)
+                except (OSError, FileNotFoundError):
+                    # Skip files that can't be accessed
+                    continue
+                    
+        return total_size
+    
+    except (OSError, FileNotFoundError):
+        # Return 0 if directory doesn't exist or can't be accessed
+        return 0
+
+# Convert bytes to human-readable format
+def format_size(size_in_bytes):
+    """
+    Convert bytes to human-readable format (KB, MB, GB, etc.)
+    
+    Args:
+        size_in_bytes (int): Size in bytes
+        
+    Returns:
+        str: Formatted size string
+    """
+    for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
+        if size_in_bytes < 1024:
+            return f"{size_in_bytes:.2f} {unit}"
+        size_in_bytes /= 1024
+    return f"{size_in_bytes:.2f} PB"
 
 
 # check for duplicates
 
 
-# ############################# ADVANCED ##########################################
 
 # check for near duplicates
 
