@@ -3,24 +3,25 @@ import time
 import pandas as pd
 import fiftyone as fo
 import fiftyone.operators as foo
-from typing import List, Optional
+import fiftyone.plugins as fop
+from typing import List, Optional, Union
 from ..config import config
 
 from pathlib import Path
 
-operations = [
-    'compute_aspect_ratio',
-    'compute_brightness',
-    'compute_contrast',
-    'compute_exposure',
-    'compute_saturation',
-    'compute_vignetting',
-    'compute_blurriness',
-    'compute_entropy',
+IMAGE_ISSUES_OPERATIONS = [
+    "compute_aspect_ratio",
+    "compute_brightness",
+    "compute_contrast",
+    "compute_exposure",
+    "compute_saturation",
+    "compute_vignetting",
+    "compute_blurriness",
+    "compute_entropy",
 ]
 
 
-def find_images(root_path):
+def find_images(root_path:Union[str, Path]) -> List[Path]:
     """
     Find images in all the subdirectories of a given path
     Args:
@@ -41,7 +42,7 @@ def create_fiftyone_dataset(
     root_path: str,
     metadata_df: pd.DataFrame,
     dataset_name: str,
-    fields: Optional[List[str]]=None,
+    fields: Optional[List[str]] = None,
 ) -> fo.Dataset:
     """
     creates a fiftyone dataset
@@ -71,7 +72,7 @@ def create_fiftyone_dataset(
     # Create samples
     samples = []
     for row in metadata_df.itertuples():
-        sample = fo.Sample( **row._asdict())
+        sample = fo.Sample(**row._asdict())
         samples.append(sample)
 
     # Create dataset from samles
@@ -83,11 +84,11 @@ def create_fiftyone_dataset(
     return dataset
 
 
-def fiftyone_check_image_quality_issues(
-    dataset:fo.Dataset,
-    operations:List[str],
-) -> fo.Dataset
-    '''
+async def fiftyone_check_image_quality_issues(
+    dataset: fo.Dataset,
+    operations: List[str] = IMAGE_ISSUES_OPERATIONS,
+) -> fo.Dataset:
+    """
     compute potential image quality issues such as brightness, contrast, exposure using\
     the image_quality_issues operator by jacob marks:
 
@@ -97,7 +98,11 @@ def fiftyone_check_image_quality_issues(
 
     Returns:
         (fo.Dataset): fiftyone dataset with image issues computed
-    '''
+    """
+
+    # Download image issues plugin from github repository
+    fop.download_plugin("https://github.com/jacobmarks/image-quality-issues/")
+
     for operation in operations:
         logging.info(f"Executing {operation} operation")
         start_time = time.time()
@@ -105,5 +110,7 @@ def fiftyone_check_image_quality_issues(
         await operator(dataset)
         end_time = time.time()
         dataset.save()
-        logging.info(f"Execution time: {end_time - start_time:.2f} seconds ({operation} operation)")
+        logging.info(
+            f"Execution time: {end_time - start_time:.2f} seconds ({operation} operation)"
+        )
     return dataset
