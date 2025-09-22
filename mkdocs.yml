@@ -23,15 +23,18 @@ theme:
     - navigation.top     # Top navigation bar
     - navigation.tracking # Updates URL on scroll
     - announce.dismiss
+    - content.tooltips
   # logo: assets/images/logo.jpg  # Optional logo
   favicon: assets/images/favicon.ico
 
 docs_dir: docs
 markdown_extensions:
+  - abbr
   - attr_list          # For image attributes (#only-light, #only-dark)
   - pymdownx.emoji     # Emoji support
   - pymdownx.highlight  # Code highlighting
   - pymdownx.superfences
+  - pymdownx.snippets
   - admonition
   - pymdownx.superfences:
       custom_fences:
@@ -43,6 +46,9 @@ markdown_extensions:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
   - search
@@ -75,9 +81,9 @@ nav:
 
   - Tutorials: tutorials/index.md
   - API Reference: api/index.md
-  - Contributing: contributing.md
-  - Changelog: changelog.md
-
+  - Contributing: pages/contributing.md
+  - Changelog: pages/changelog.md
+  - Acknowledgements: pages/acknowledgements.md
 
 hooks:
   - docs/hooks/hooks.py  # resolve relative image tags correctly.
