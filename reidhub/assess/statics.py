@@ -12,7 +12,7 @@ import matplotlib.patches as patches
 import numpy as np
 from PIL import Image
 from matplotlib.cm import get_cmap
-from typing import List, Union, Tuple
+from typing import List, Union, Tuple, Sequence
 
 
 def plot_grid(
@@ -33,7 +33,15 @@ def plot_grid(
         spacing (float, optional): Fractional spacing between subplots. Default is 0.05.
 
     Returns:
-        plt.Figure: The figure containing the grid of images with borders.
+        (matplotlib.figure.Figure): The figure containing the grid of images with borders.
+
+    Examples:
+        >>> import numpy as np
+        >>> from PIL import Image
+        >>> images = [np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8) for _ in range(9)]
+        >>> ids = [1, 1, 2, 2, 3, 3, 4, 4, 5]
+        >>> fig = plot_grid(images, ids, grid_shape=(3, 3), img_size=(100, 100), spacing=0.1)
+        >>> plt.close(fig)  # Close the figure to prevent display in non-interactive environments
     """
     # Unpack grid shape
     cols, rows = grid_shape
@@ -92,28 +100,55 @@ def plot_grid(
     return fig
 
 
-def plot_identity_histogram(ids, bins=50, log_scale=False, alpha=0.6, figsize=(8, 5)):
-    """
-    Plot a transparent histogram of identity frequencies 
-    (how many images per identity).
+# def plot_identity_histogram(ids, bins=50, log_scale=False, alpha=0.6, figsize=(8, 5)):
+"""
+Plot a transparent histogram of identity frequencies 
+(how many images per identity).
+
+Args:
+    ids (list): List of identity labels.
+    bins (int or list): Number of bins or explicit bin edges.
+    log_scale (bool): Whether to use log scale for y-axis.
+    alpha (float): Transparency of histogram bars (0=fully transparent, 1=opaque).
+    figsize (tuple): Figure size.
+    Union[int, Sequence[float], str, None]
+"""
+
+
+def plot_identity_histogram(
+    ids: List[Union[int, str]],
+    bins: Union[int, Sequence[float]] = 50,
+    log_scale: bool = False,
+    alpha: float = 0.6,
+    figsize: Tuple[float, float] = (8, 5),
+) -> plt.Figure:
+    """Plot a transparent histogram of identity frequencies (how many images per identity).
 
     Args:
-        ids (list): List of identity labels.
-        bins (int or list): Number of bins or explicit bin edges.
-        log_scale (bool): Whether to use log scale for y-axis.
-        alpha (float): Transparency of histogram bars (0=fully transparent, 1=opaque).
-        figsize (tuple): Figure size.
+        ids: List of identity labels (e.g., integers or strings).
+        bins: Number of bins or explicit bin edges for the histogram. Defaults to 50.
+        log_scale: Whether to use a logarithmic scale for the y-axis. Defaults to False.
+        alpha: Transparency of histogram bars (0=fully transparent, 1=opaque). Defaults to 0.6.
+        figsize: Figure size as (width, height) in inches. Defaults to (8, 5).
+
+    Returns:
+        matplotlib.pyplot.Figure: The generated histogram figure.
+
+    Examples:
+        >>> ids = ["zebra1", "zebra1", "zebra2", "zebra3", "zebra3", "zebra3"]
+        >>> fig = plot_identity_histogram(ids, bins=3, log_scale=False, alpha=0.7, figsize=(6, 4))
+        >>> plt.close(fig)  # Close the figure to prevent display in non-interactive environments
     """
     # Count how many images per identity
-    counts = Counter(ids).values()
+    counts = list(Counter(ids).values())
 
     # Plot histogram
     fig, ax = plt.subplots(figsize=figsize)
     ax.hist(counts, bins=bins, color="steelblue", edgecolor="black", alpha=alpha)
 
     # Transparent backgrounds
-    fig.patch.set_alpha(0)   # Figure background
-    ax.patch.set_alpha(0)    # Axes background
+    fig.patch.set_alpha(0)  # Figure background
+    ax.patch.set_alpha(0)  # Axes background
 
     ax.set_xlabel("Number of images per identity")
     ax.set_ylabel("Number of identities")

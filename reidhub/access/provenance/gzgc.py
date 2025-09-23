@@ -27,13 +27,18 @@ DATASET_ID = "gzgc"
 def download_and_extract() -> str:
     """
     downloads the gzgc from the gcp bucket url provided by lila datasets.
-    Accessible here: https://lila.science/datasets/great-zebra-giraffe-id
+    Accessible here: [lila gzgc](https://lila.science/datasets/great-zebra-giraffe-id)
+    <!-- DATASET_ID (str) :- the identifier for the dataset. -->
 
     Args:
-        DATASET_ID: str :- the identifier for the dataset.
 
-    returns:
+    Returns:
         a path to the extracted and formatted `reidhub` dataset
+
+    Examples:
+        >>> from reidhub.provenance.gzgc import download_and_extract
+        >>> download_and_extract()
+
     """
     config = get_dataset_config(DATASET_ID)
     url = config.url[0]

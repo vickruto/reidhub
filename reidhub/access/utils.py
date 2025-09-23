@@ -9,8 +9,7 @@ from typing import List, Optional, Union
 from ..config import config
 
 
-
-def find_images(root_path:Union[str, Path]) -> List[Path]:
+def find_images(root_path: Union[str, Path]) -> List[Path]:
     """
     Find images in all the subdirectories of a given path
     Args:
