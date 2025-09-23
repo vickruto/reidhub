@@ -60,6 +60,19 @@ plugins:
             docstring_style: google
             show_source: true
             merge_init_into_class: true
+
+            # from ultralytics: 
+            docstring_options:
+              ignore_init_summary: true
+              trim_doctest_flags: true
+            # --show root headings only when necessary ie many input params : 
+            show_root_heading: true 
+            separate_signature: true
+            line_length: 80
+            show_signature_annotations: true
+            show_symbol_type_heading: true # insiders
+            show_symbol_type_toc: true # insiders
+            show_inheritance_diagram: true # insiders
   - exclude:
       glob:
         - overrides/*.html
@@ -80,7 +93,10 @@ nav:
       - Amur Tigers Reidentification : output-dataset-readmes/gzgc.md
 
   - Tutorials: tutorials/index.md
-  - API Reference: api/index.md
+  - API Reference:  # : api/index.md
+    - Access: api/access.md
+    - Assess: api/assess.md
+    - Address: api/address.md
   - Contributing: pages/contributing.md
   - Changelog: pages/changelog.md
   - Acknowledgements: pages/acknowledgements.md
