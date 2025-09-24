@@ -4,22 +4,23 @@
 
 [![Tests](https://github.com/vickruto/reidhub/workflows/Test/badge.svg)](https://github.com/vickruto/reidhub/actions/workflows/test.yml)
 [![Code Quality](https://github.com/vickruto/reidhub/workflows/Code%20Quality/badge.svg)](https://github.com/vickruto/reidhub/actions/workflows/code-quality.yml)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Poetry](https://img.shields.io/badge/poetry-1.0+-blue.svg)](https://python-poetry.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Table of Contents
 1. [Project Overview](#📌-project-overview)
-2. [Features](#✨-features)
-3. [Datasets](#🗂-datasets) 
-4. [Documentation](#📖-documentation) 
-5. [The Fynesse Framework](#fynesse-framework)
+2. [Installation](#⬇️-installation)
+3. [Features](#✨-features)
+4. [Datasets](#🗂-datasets) 
+5. [Documentation](#📖-documentation) 
+6. [The Fynesse Framework](#fynesse-framework)
    - [Fynesse Paradigm Aspects](#fynesse-paradigm-aspects)
       - [Access](#1-access)
       - [Assess](#2-assess)
       - [Address](#3-address) 
-6. [Setting Up](#setting-up)
+7. [Setting Up](#🛠️-setting-up)
     - [Prerequisites](#prerequisites)
     - [Clone this repository](#clone-this-repository)
     - [Installation](#installation)
@@ -40,6 +41,29 @@ It applies the [**Access–Assess–Address (AAA) framework**](https://inversepr
 
 The goal is to reduce friction in re-identification workflows: no more repeated preprocessing, inconsistent dataset structures, or scattered benchmarks.  
 
+## ⬇️ Installation
+
+**Option 1**: Clone and Install with Poetry 
+
+```bash
+# Clone the repository
+git clone https://github.com/vickruto/reidhub.git
+
+# Move into the project directory
+cd reidhub
+
+# Install the project & its dependencies with Poetry
+poetry install
+```
+
+**Option 2**: Install Directly with pip
+This method installs the package globally or in your active Python environment. Ensure an environment is set up to avoid dependency conflicts.
+
+```bash
+pip install git+https://github.com/vickruto/reidhub.git
+```
+
+
 ## ✨ Features  
 
 - 🔗 **Dataset registry** for open-source animal ReID datasets  
@@ -54,10 +78,10 @@ The goal is to reduce friction in re-identification workflows: no more repeated 
 ReIDHub will initially support multiple open-source datasets (with links and readiness states):  
 
 - 🦓 **Great Zebra and Giraffe Count and ID** – [Lila Datasets Page](https://lila.science/datasets/great-zebra-giraffe-id)  
-- 🦓 **Beluga ID 2022** – [Lila Datasets Page](https://lila.science/datasets/beluga-id-2022/)  
-- 🦓 **Leopard ID 2022** – [Lila Datasets Page](https://lila.science/datasets/leopard-id-2022/)  
-- 🦓 **Sea Star Re-ID 2023** – [Lila Datasets Page](https://lila.science/sea-star-re-id-2023/)  
-- 🐘 **Hyena ID 2022** – [Lila Datasets Page](https://lila.science/datasets/hyena-id-2022/)  
+- 🐬 **Beluga ID 2022** – [Lila Datasets Page](https://lila.science/datasets/beluga-id-2022/)  
+- 🐆 **Leopard ID 2022** – [Lila Datasets Page](https://lila.science/datasets/leopard-id-2022/)  
+- ⭐ **Sea Star Re-ID 2023** – [Lila Datasets Page](https://lila.science/sea-star-re-id-2023/)  
+- 🐆 **Hyena ID 2022** – [Lila Datasets Page](https://lila.science/datasets/hyena-id-2022/)  
 - 🐋 **WhaleID / Happywhale** – [Kaggle link](https://www.kaggle.com/competitions/happy-whale-and-dolphin)  
 
 Each dataset will include:  
@@ -114,10 +138,10 @@ Understanding the nature and quality of the data before analysis. This involves 
 Applying the data to the actual question or problem. This may involve building predictive models, statistical analyses, or creating visualizations and dashboards. It’s the most familiar step to researchers, as it’s where insights are derived and communicated.
 
 
-## Setting Up
+## 🛠️ Setting Up
 
 ### Prerequisites
-- Python 3.9 or higher
+- Python 3.11 or higher
 - Poetry (install via `curl -sSL https://install.python-poetry.org | python3 -`)
 - make  - an option to make common development commands easier.
 If you are working in a UNIX based system (Linux or Mac) then you already have `make` installed. If you are working on Windows, you might have to install it. 
@@ -193,7 +217,20 @@ make check
 
 # Clean cache and build artifacts
 make clean
+
+# Render output markdown doc files from templates
+make render-docs 
+
+# Build MkDocs site
+make build-docs
+
+# Serve MkDocs on localhost
+make serve-docs
+
+# Force deploy MkDocs to github pages
+make deploy-docs
 ```
+
 </details>
 
 <details>
@@ -214,19 +251,32 @@ poetry run mypy reidhub/
 
 # Linting
 poetry run flake8 reidhub/
+
+# Render output markdown doc files from templates
+cd docs && poetry run python render.py
+
+# Build MkDocs site
+mkdocs build
+
+# Serve MkDocs locally
+mkdocs serve
+
+# Force deploy doc files to github pages
+mkdocs gh-deploy --force
 ```
+
 </details>
 
 
 ##### Adding Dependencies
 
 ```bash
-# To add a dependency (eg pandas):
+# To add a runtime dependency (eg pandas):
 poetry add pandas
 
 or 
 
-poetry add pandas --group dev # If you only need it for development
+poetry add ruff --group dev # For dependencies only needed for development
 ```
 
 The commands above will update the `pyproject.toml` with the latest version of the dependency requested that does not cause a dependency conflict with the already added dependencies. It also automatically updates the lockfile `poetry.lock` ensuring that the analysis is reproducible in any system. 
