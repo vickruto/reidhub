@@ -100,21 +100,6 @@ def plot_grid(
     return fig
 
 
-# def plot_identity_histogram(ids, bins=50, log_scale=False, alpha=0.6, figsize=(8, 5)):
-"""
-Plot a transparent histogram of identity frequencies 
-(how many images per identity).
-
-Args:
-    ids (list): List of identity labels.
-    bins (int or list): Number of bins or explicit bin edges.
-    log_scale (bool): Whether to use log scale for y-axis.
-    alpha (float): Transparency of histogram bars (0=fully transparent, 1=opaque).
-    figsize (tuple): Figure size.
-    Union[int, Sequence[float], str, None]
-"""
-
-
 def plot_identity_histogram(
     ids: List[Union[int, str]],
     bins: Union[int, Sequence[float]] = 50,

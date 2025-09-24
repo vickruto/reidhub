@@ -31,14 +31,14 @@ Best Practice on Implementation
    - Log data summary information
 
 4. EXAMPLE PATTERNS:
-   
+
    Basic error handling:
    try:
        df = pd.read_csv('data.csv')
    except FileNotFoundError:
        print("Error: Could not find data.csv file")
        return None
-   
+
    With logging:
    print("Loading data from data.csv...")
    try:
