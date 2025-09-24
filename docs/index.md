@@ -1,43 +1,64 @@
-# Welcome to The Docs
+# 🦓 Welcome to ReIDHub Docs
 
-This is the homepage of ReIDHub documentation.
+Welcome to the documentation for **ReIDHub** — a central hub for open-source animal re-identification (ReID) datasets, built on the **Access–Assess–Address** framework.
 
+---
 
-## About This Project
+## 🌍 About ReIDHub
 
-Welcome to the official documentation for **ReIDHub**, a central hub for open-source animal re-identification datasets, built on the Access–Assess–Address framework.
+Animal re-identification is a critical task in wildlife monitoring and conservation, yet workflows for accessing, processing, and analyzing open-source datasets are often fragmented.  
+**ReIDHub** addresses this challenge by providing a structured, extensible framework that makes dataset-driven research in animal ReID **portable, reproducible, and collaborative**.
 
-## Getting Started
+The framework is built around three pillars:
 
-New to ReIDHub? Start here:
+1. **Access** — Retrieve open-source ReID datasets in standardized formats and explore them with tools like FiftyOne.  
+2. **Assess** — Compute dataset statistics, detect potential image quality issues (e.g., overexposure, motion blur), and generate reusable artifacts such as embeddings and open-source model predictions — all with caching.  
+3. **Address** — Tackle scientific and practical questions by benchmarking datasets with models like `MegaDescriptor`, or classical approaches such as `SIFT`.
 
-- [Installation Guide](getting-started/installation.md): Step-by-step instructions to set up the project.
-- [Quick Start](getting-started/quick-start.md): A fast track to using the core features.
-- [FAQ](getting-started/faq.md): Answers to common questions.
+Beyond datasets, ReIDHub also centralizes other **research outputs** related to the datasets  — including original citations, related publications, and enriched outputs — making it easier to build upon previous work.
 
-## Datasets
-- [Great Zebra and Giraffe Count](output-dataset-readmes/gzgc.md)
-- [Nyala Data(Upcoming)]()
-- [Lions Data(Upcoming)]()
-... and a lot more 
+---
 
-## Key Features
+## 🚀 Getting Started
 
-ReIDHub offers powerful functionality, including:
+New to ReIDHub? Start here:  
 
-- **Standardized ReID Dataset Access** reducing the friction to accessing and working with animal ReID data.
-- **Dataset Mirroring**: The animal datasets are mirrored on open accessible data repositories including Hugging Face and Kaggle for redundancy
-- **Data Enrichment**: The data is enriched with reusable artifacts such as foundational model embeddings, bounding box predictions etc. 
+- 📥 [Installation](getting-started/installation.md) — step-by-step setup guide  
+- ⚡ [Quick Start](getting-started/quick-start.md) — run your first workflow in minutes  
+- ❓ [FAQ](getting-started/faq.md) — answers to common questions  
 
-## Navigation
+---
 
-Use the sidebar to explore:
+## 📚 Supported Datasets
 
-- **[Tutorials](tutorials/index.md)**: Hands-on guides for practical use cases.
-- **[API Reference](api/index.md)**: Useful documentation for developers.
-- **[Contributing](contributing.md)**: How to contribute to the project.
-- **[Changelog](changelog.md)**: Stay updated with the latest releases.
+ReIDHub provides standardized access and enrichments for a growing catalogue of datasets, including:  
 
-## Need Help / Found Issues?
+- [Great Zebra and Giraffe Count](output-dataset-readmes/gzgc.md)  
+- Nyala Data *(upcoming)*  
+- Lions Data *(upcoming)*  
+- …and more  
 
-- Report issues or suggest features on the project repo's [GitHub Issues](https://github.com/vickruto/reidhub/issues).
+Each dataset page includes high-level information, sample images, access instructions, standardized metadata, enrichments, usage notes, and citations.  
+
+---
+
+## ✨ Key Features
+
+- **Standardized Dataset Access** — work with diverse ReID datasets through a consistent interface.  
+- **Dataset Mirroring** — redundancy via open repositories (e.g., Hugging Face, Kaggle).  
+- **Data Enrichment** — reusable artifacts such as embeddings, bounding box predictions, and quality checks.  
+
+---
+
+## 🧭 Navigation
+
+Use the sidebar to explore:  
+
+- 📖 [Tutorials](tutorials/index.md) — practical, hands-on guides  
+- ⚙️ [API Reference](api/index.md) — developer-focused documentation  
+- 🤝 [Contributing](pages/contributing.md) — how to get involved  
+- 📝 [Changelog](pages/changelog.md) — see what’s new  
+
+---
+
+💡 **Tip:** If you’re here for the first time, jump straight to [Quick Start](getting-started/quick-start.md) and get your first ReID workflow running in minutes.

@@ -93,10 +93,6 @@ nav:
   - Tutorials: 
     - tutorials/index.md
     - ReIDHub Demo: tutorials/wrapper.md
-    - Starter: tutorials/MLFC_Starter_Mini_Project_1.md
-    - Notebook Starter: tutorials/MLFC_Starter_Mini_Project_1.ipynb
-    - Starter HTML: tutorials/MLFC_Starter_Mini_Project_1.html
-    - IFrame Wrapper:  tutorials/wrapper.md
   - API Reference: 
     # - api/index.md
     - Access: api/access.md
