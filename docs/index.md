@@ -9,7 +9,7 @@ Welcome to the official documentation for **ReIDHub**, a central hub for open-so
 
 ## Getting Started
 
-New to My Project? Start here:
+New to ReIDHub? Start here:
 
 - [Installation Guide](getting-started/installation.md): Step-by-step instructions to set up the project.
 - [Quick Start](getting-started/quick-start.md): A fast track to using the core features.
@@ -19,6 +19,7 @@ New to My Project? Start here:
 - [Great Zebra and Giraffe Count](output-dataset-readmes/gzgc.md)
 - [Nyala Data(Upcoming)]()
 - [Lions Data(Upcoming)]()
+... and a lot more 
 
 ## Key Features
 
@@ -39,4 +40,4 @@ Use the sidebar to explore:
 
 ## Need Help / Found Issues?
 
-- Report issues or suggest features on our [GitHub Issues](https://github.com/vickruto/reidhub/issues).
+- Report issues or suggest features on the project repo's [GitHub Issues](https://github.com/vickruto/reidhub/issues).
