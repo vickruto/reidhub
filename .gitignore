@@ -23,7 +23,7 @@ install-whats-next.sh
 whats-next
 
 # VibeSafe templates directory
-templates/
+# templates/
 
 # AI-Requirements framework (VibeSafe-managed)
 ai-requirements/README.md

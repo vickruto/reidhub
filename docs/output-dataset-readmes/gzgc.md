@@ -12,6 +12,8 @@
 [![Species: Plains Zebra](https://img.shields.io/badge/Plains%20Zebra-Least%20Concern-green)](https://www.iucnredlist.org/species/41013/45172424)[![Species: Masai Giraffe](https://img.shields.io/badge/Masai%20Giraffe-Endangered-red)](https://www.iucnredlist.org/species/88421036/88421121)
 [![License](https://img.shields.io/badge/license-CDLA--Permissive-lightgrey)](../licenses/cdla-permissive.md)
 [![Download Size](https://img.shields.io/badge/size-10GB-orange)](https://lila.science/datasets/great-zebra-giraffe-id)
+[![Circa](https://img.shields.io/badge/Circa-March%202015-informational)]( "This dataset is from March 2015")
+[![Slug](https://img.shields.io/badge/slug-gzgc-success)]( "ReIDHub Unique Dataset Identifier")
 
 
 
@@ -26,11 +28,12 @@ This dataset contains images taken from a two-day photographic census of **Plain
 
 It includes individual IDs for both species, with bounding boxes, metadata such as viewpoint, species, ID; and resized images (≤3000 px).  
 
-The IDs were assigned using the HotSpotter algorithm [(Crall et al. 2013)] by visually matching the stripes and spots as seen on the body of the animal.
+The IDs were assigned using the HotSpotter algorithm, [Crall et al. 2013](https://ieeexplore.ieee.org/abstract/document/6475023) by visually matching the stripes and spots as seen on the body of the animal.
 
 ---
 
-## ⚠️ Notes
+## ⚠️ Usage Notes
+
 
 <p align="center">
   <img src="../assets/content_Under-Construction-Free-Download-PNG.png" alt="In development" width="120"/>
@@ -38,20 +41,72 @@ The IDs were assigned using the HotSpotter algorithm [(Crall et al. 2013)] by vi
 
 
 ---
+## 🧩 Enrichments
+
+<p align="center">
+  <img src="../assets/content_Under-Construction-Free-Download-PNG.png" alt="In development" width="120"/>
+</p>
+
+---
 
 ## 📥 Access
-- [LILA Dataset Page](https://lila.science/datasets/great-zebra-giraffe-id)  
-- Cloud mirrors: GCP, AWS, Azure (see LILA page)  
+Original Source: [LILA](https://lila.science/datasets/great-zebra-giraffe-id)  
+Enriched Version: [Hugging Face]( "TODO: The HF mirror link coming soon")  
+
+### a. Provenance
+
+To access the raw dataset from source, run the following:
+
+```python
+from reidhub.access.provenance.gzgc import download_and_extract
+dataset_root = download_and_extract()
+print(f'Dataset downloaded to: {dataset_root}')
+```
+
+### b. Enriched Re-Access
+
+<p align="center">
+  <img src="../assets/content_Under-Construction-Free-Download-PNG.png" alt="In development" width="120"/>
+</p>
 
 ---
 
-## 📜 Citation
+## 📜 Citation 
+
+<!--
+BIBTEX: 
+@inproceedings{parham2017animal,
+  title={Animal population censusing at scale with citizen science and photographic identification},
+  author={Parham, Jason and Crall, Jonathan and Stewart, Charles and Berger-Wolf, Tanya and Rubenstein, Daniel I},
+  booktitle={AAAI spring symposium-technical report},
+  year={2017}
+}
+-->
+
 > Parham, J., Crall, J., Stewart, C., Berger-Wolf, T., Rubenstein, D.I.  
-> *Animal population censusing at scale with citizen science and photographic identification.* AAAI Spring Symposium, 2017.  
+> *Animal population censusing at scale with citizen science and photographic identification.* AAAI Spring Symposium, 2017. [https://cdn.aaai.org/ocs/15245/15245-68194-1-PB.pdf](https://cdn.aaai.org/ocs/15245/15245-68194-1-PB.pdf)
+
+
+```bibtex
+@inproceedings{parham2017animal,
+  title={Animal population censusing at scale with citizen science and photographic identification},
+  author={Parham, Jason and Crall, Jonathan and Stewart, Charles and Berger-Wolf, Tanya and Rubenstein, Daniel I},
+  booktitle={AAAI spring symposium-technical report},
+  year={2017}
+}
+```
 
 ---
 
-## 🎯 Suggested Uses
+## 📚 Publications 
+
+<p align="center">
+  <img src="../assets/content_Under-Construction-Free-Download-PNG.png" alt="In development" width="120"/>
+</p>
+
+---
+## 🎯 Potential Usecases
+
 - **Re-ID / Retrieval** under class imbalance  
 - **Few-shot learning**: many IDs with 1 image only  
 - **Viewpoint analysis** for stripes and spot patterns  

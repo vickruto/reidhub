@@ -1,3 +1,4 @@
+slug: gzgc
 num_images: 4948
 num_ids: 2056
 species:
@@ -17,3 +18,4 @@ license:
   name: CDLA-Permissive
   url: ../licenses/cdla-permissive.md
 download_size: 10GB
+circa: March 2015
