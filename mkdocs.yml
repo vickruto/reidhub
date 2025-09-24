@@ -22,6 +22,7 @@ theme:
     - content.tabs       # Support for tabs
     - navigation.top     # Top navigation bar
     - navigation.tracking # Updates URL on scroll
+    - navigation.indexes # enable section indexes
     - announce.dismiss
     - content.tooltips
   # logo: assets/images/logo.jpg  # Optional logo
@@ -84,16 +85,20 @@ nav:
       - Installation: getting-started/installation.md
       - Quick Start: getting-started/quick-start.md
       - FAQ: getting-started/faq.md
-  - Features:
-      - Feature 1: features/feature1.md
-      - Feature 2: features/feature2.md
   - Datasets: 
-      - Great Zebra and Giraffe Count : output-dataset-readmes/gzgc.md
-      - Nyala Data : output-dataset-readmes/nyala.md
-      - Amur Tigers Reidentification : output-dataset-readmes/gzgc.md
-
-  - Tutorials: tutorials/index.md
-  - API Reference:  # : api/index.md
+    - output-dataset-readmes/index.md
+    - Great Zebra and Giraffe Count : output-dataset-readmes/gzgc.md
+    - Nyala Data : output-dataset-readmes/nyala.md
+    - Amur Tigers Reidentification : output-dataset-readmes/gzgc.md
+  - Tutorials: 
+    - tutorials/index.md
+    - ReIDHub Demo: tutorials/wrapper.md
+    - Starter: tutorials/MLFC_Starter_Mini_Project_1.md
+    - Notebook Starter: tutorials/MLFC_Starter_Mini_Project_1.ipynb
+    - Starter HTML: tutorials/MLFC_Starter_Mini_Project_1.html
+    - IFrame Wrapper:  tutorials/wrapper.md
+  - API Reference: 
+    # - api/index.md
     - Access: api/access.md
     - Assess: api/assess.md
     - Address: api/address.md
