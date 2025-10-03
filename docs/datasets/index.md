@@ -55,7 +55,7 @@ MAKE THIS TABLE AUTO-FILLING USING JINJA
 
 Regardless of dataset, the general usage pattern is the same:  
 
-Example with [`gzgc`](../output-dataset-readmes/gzgc.md) dataset:  
+Example with [`gzgc`](../datasets/gzgc.md) dataset:  
 ```python
 from reidhub.access.provenance.gzgc import download_and_extract
 dataset_root = download_and_extract()

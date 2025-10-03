@@ -78,6 +78,9 @@ plugins:
       glob:
         - overrides/*.html
         - __pycache__/*
+        - datasets/**/*.md
+        - datasets/render.py
+        - hooks/hooks.py
 
 nav:
   - Home: index.md
@@ -86,15 +89,15 @@ nav:
       - Quick Start: getting-started/quick-start.md
       - FAQ: getting-started/faq.md
   - Datasets: 
-    - output-dataset-readmes/index.md
-    - Great Zebra and Giraffe Count : output-dataset-readmes/gzgc.md
-    - Nyala Data : output-dataset-readmes/nyala.md
-    - Amur Tigers Reidentification : output-dataset-readmes/gzgc.md
+    - datasets/index.md
+    - Great Zebra and Giraffe Count : datasets/gzgc.md
+    - Nyala Data : datasets/nyala.md
+    - Amur Tigers Reidentification : datasets/gzgc.md
   - Tutorials: 
     - tutorials/index.md
-    - ReIDHub Demo: tutorials/wrapper.md
+    - Walkthrough Demo: tutorials/2025-09-22-reidhub-checkpoint.ipynb
   - API Reference: 
-    # - api/index.md
+    # - api/index.md ## TODO: Update this index page
     - Access: api/access.md
     - Assess: api/assess.md
     - Address: api/address.md

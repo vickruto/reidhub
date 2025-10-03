@@ -33,7 +33,7 @@ New to ReIDHub? Start here:
 
 ReIDHub provides standardized access and enrichments for a growing catalogue of datasets, including:  
 
-- [Great Zebra and Giraffe Count](output-dataset-readmes/gzgc.md)  
+- [Great Zebra and Giraffe Count](datasets/gzgc.md)  
 - Nyala Data *(upcoming)*  
 - Lions Data *(upcoming)*  
 - …and more  

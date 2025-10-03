@@ -1,4 +1,4 @@
-# Reference for reidhub/assess
+# Reference for `reidhub/assess`
 
 ## a. Statics
 

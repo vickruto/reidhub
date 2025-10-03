@@ -13,7 +13,7 @@ Make sure you’ve already installed `reidhub`. If not, check out the [Installat
 
 With `reidhub`, you can download and access re-identification datasets in a unified way.
 
-Example with [`gzgc`](../output-dataset-readmes/gzgc.md) dataset:  
+Example with [`gzgc`](../datasets/gzgc.md) dataset:  
 ```python
 from reidhub.access.provenance.gzgc import download_and_extract
 dataset_root = download_and_extract()
@@ -43,7 +43,7 @@ These commands will:
 Different datasets often have different formats.  
 `reidhub` automatically unifies them into a **standardized metadata dataframe**.
 
-Example with [`gzgc`](../output-dataset-readmes/gzgc.md) dataset:  
+Example with [`gzgc`](../datasets/gzgc.md) dataset:  
 ```python
 from reidhub.access.provenance.gzgc import systematize_dataset_metadata
 
@@ -98,7 +98,7 @@ Example:
 ## 5. What’s Next?
 
 - Explore the [Access Framework](../api/access.md) to understand provenance and enrichment.  
-- Browse the [Supported Datasets](../datasets.md) page for a full list.  
+- Browse the [Supported Datasets](../datasets/index.md#supported-datasets) page for a full list.  
 - Check out the [Example Tutorials](../tutorials/index.md) for end-to-end workflows.
 
 ---
